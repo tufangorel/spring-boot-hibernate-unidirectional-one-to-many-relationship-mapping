@@ -32,7 +32,7 @@ datasource-proxy <br/>
 ### Save customer sucessfully to database
 
 Method : HTTP.POST <br/>
-URL : http://localhost:8080/customer/save <br/>
+URL : localhost:8080/customer-info/customer/save <br/>
 
 Request : 
 <pre>
@@ -103,6 +103,7 @@ curl --location --request POST 'localhost:8080/customer-info/customerorder/save'
 Response : 
 
 HTTP response code 200 <br/>
+<pre>
 {
     "id": 1,
     "orderDate": "2021-05-05T16:00:35.35",
@@ -131,64 +132,10 @@ HTTP response code 200 <br/>
 }
 </pre><br/>
 
-### Create a new OrderItem for CustomerOrder id = 1.
-
-Method : HTTP.POST <br/>
-URL : localhost:8080/customer-info/orderitem/save <br/>
-
-Request : 
-<pre>
-curl --location --request POST 'localhost:8080/customer-info/orderitem/save' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "customerOrder": {
-        "customer": {
-            "age": 0,
-            "id": 1,
-            "name": "string",
-            "shippingAddress": {
-                "city": "string",
-                "country": "string",
-                "id": 1,
-                "streetName": "string"
-            }
-        },
-        "id": 1,
-        "orderDate": "2021-05-04T15:37:54.309Z"
-    },
-    "quantity": 5
-}'
-</pre><br/>
-
-Response : 
-
-HTTP response code 200 <br/>
-<pre>
-{
-    "id": 1,
-    "quantity": 5,
-    "customerOrder": {
-        "id": 1,
-        "orderDate": "2021-05-04T15:37:54.309",
-        "customer": {
-            "id": 1,
-            "name": "string",
-            "age": 0,
-            "shippingAddress": {
-                "id": 1,
-                "streetName": "string",
-                "city": "string",
-                "country": "string"
-            }
-        }
-    }
-}
-</pre><br/>
-
 ### List OrderItems saved to database
 
 Method : HTTP.GET <br/>
-URL : localhost:8080/customer-info/orderitem/find/customer/orderitem/1 <br/>
+URL : localhost:8080/customer-info/orderitem/list <br/>
 
 Request : 
 <pre>
