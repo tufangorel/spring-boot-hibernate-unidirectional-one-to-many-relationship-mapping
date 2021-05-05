@@ -1,10 +1,10 @@
-## spring-boot-hibernate-unidirectional-many-to-one-relationship-mapping
+## spring-boot-hibernate-unidirectional-one-to-many-relationship-mapping
 
-1- Implement hibernate unidirectional many-to-one relational mapping <br/>
+1- Implement hibernate unidirectional one-to-many relational mapping <br/>
 2- ER diagram :  <br/>
-NOT : Many OrderItem related to One CustomerOrder <br/>
+NOT : One CustomerOrder is related to Many OrderItem <br/>
 
-![alt text](https://github.com/tufangorel/spring-boot-hibernate-unidirectional-many-to-one-relationship-mapping/blob/main/customer_order_item_er_diagram.png) <br/>
+![one_to_many_er_diagram](doc/one_to_many_er_diagram.png) <br/>
 
 
 3- Start Spring Boot application with a specific profile such as "-Dspring.profiles.active=dev" . <br/>
